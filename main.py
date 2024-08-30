@@ -38,10 +38,11 @@ app.add_middleware(
 
 
 # Add the root route here
-@app.get("/")
-async def root():
+@app.api_route("/", methods=["GET", "HEAD"])
+async def root(request: Request):
+    if request.method == "HEAD":
+        return {}  # Return an empty response for HEAD requests
     return {"message": "Welcome to ContractSense API", "status": "operational"}
-
 
 class Task(BaseModel):
     description: str

@@ -5,7 +5,7 @@ import json
 import base64
 import os
 
-BACKEND_URL = "http://localhost:8000"  # Update this if your backend is hosted elsewhere
+BACKEND_URL = os.getenv("BACKEND_URL", "https://contractsense-backend.onrender.com")
 
 def upload_contract(file):
     if file is None:

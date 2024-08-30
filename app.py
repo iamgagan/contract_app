@@ -102,5 +102,4 @@ with gr.Blocks() as demo:
         outputs=[tasks_output, detailed_output, results_download]
     )
 
-if __name__ == "__main__":
-    demo.launch(share=True)
+demo.launch(share=True)

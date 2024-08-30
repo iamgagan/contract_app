@@ -36,6 +36,13 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
+
+# Add the root route here
+@app.get("/")
+async def root():
+    return {"message": "Welcome to ContractSense API", "status": "operational"}
+
+
 class Task(BaseModel):
     description: str
     amount: float

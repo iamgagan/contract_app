@@ -26,6 +26,15 @@ load_dotenv()  # This loads the .env file
 
 app = FastAPI()
 
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
+
 class Task(BaseModel):
     description: str
     amount: float
@@ -267,6 +276,5 @@ def parse_rows(rows):
             raise ValueError(f"Invalid amount format in file: {e}")
     return tasks
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+import uvicorn
+uvicorn.run(app, host="0.0.0.0", port=8000)

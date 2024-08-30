@@ -276,6 +276,3 @@ def parse_rows(rows):
             logger.error(f"Invalid amount format: {e}")
             raise ValueError(f"Invalid amount format in file: {e}")
     return tasks
-
-import uvicorn
-uvicorn.run(app, host="0.0.0.0", port=8000)

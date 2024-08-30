@@ -1,7 +1,6 @@
 import os
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
-from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List
 import json
@@ -18,6 +17,7 @@ from docx import Document
 import zipfile
 import chardet
 import pandas as pd
+from fastapi.middleware.cors import CORSMiddleware
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
@@ -276,3 +276,8 @@ def parse_rows(rows):
             logger.error(f"Invalid amount format: {e}")
             raise ValueError(f"Invalid amount format in file: {e}")
     return tasks
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)

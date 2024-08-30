@@ -79,6 +79,19 @@ We welcome contributions to ContractSense! If you have suggestions for improveme
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+
+## 🌐 Public Demo
+
+You can access and use ContractSense through our public interface:
+
+[ContractSense Demo]((https://huggingface.co/spaces/gsingh78/ContractSense))
+
+This interface allows you to upload contracts and task files, extract conditions, and analyze task compliance without needing to set up the project locally.
+
+Please note:
+- The public interface has usage limits to prevent abuse.
+- For processing sensitive documents, we recommend setting up ContractSense in a secure, private environment.
+
 ## 🙏 Acknowledgments
 
 - OpenAI for providing the powerful GPT models
